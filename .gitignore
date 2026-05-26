@@ -1,0 +1,2 @@
+# Local PDF-rendering toolchain (vendored Tailwind, headless Chromium, node_modules)
+.pdfbuild/
