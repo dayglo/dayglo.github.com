@@ -193,14 +193,14 @@
 			<hr class="border-0 bg-gray-500 text-gray-500 h-px">
 			<div class="pt-2 grid grid-cols-3 gap-2 ">
 				<div><strong style="font-family: 'Archivo Narrow'">Cloud: </strong>Google Cloud Platform / AWS / Azure </div>
-				<div><strong style="font-family: 'Archivo Narrow'">Hosting: </strong>Kubernetes / VMware</div>
-				<div><strong style="font-family: 'Archivo Narrow'">OS / Runtime: </strong>Windows / Linux / Containers / Serverless</div>
+				<div><strong style="font-family: 'Archivo Narrow'">Hosting: </strong>Kubernetes / VMware / Docker</div>
+				<div><strong style="font-family: 'Archivo Narrow'">OS / Runtime: </strong>Windows / Linux / Containers / Serverless / CUDA</div>
 				<div><strong style="font-family: 'Archivo Narrow'">Automation: </strong>Azure Devops / Github / Gitlab / Jenkins / Teamcity</div>
-				<div><strong style="font-family: 'Archivo Narrow'">Data: </strong>Tensorflow / Bigquery / Jupyter / SQL / Firestore  </div>
+				<div><strong style="font-family: 'Archivo Narrow'">Data: </strong>Snowflake / Oracle / Bigquery / Jupyter / SQL / Firestore / dbt / FAISS </div>
 				<div><strong style="font-family: 'Archivo Narrow'">IAC: </strong>Terraform / ARM / Cloudformation</div>
+				<div><strong style="font-family: 'Archivo Narrow'">AI/ML: </strong>LangGraph / Claude API / OpenAI API / DeepFace / ArcFace / RetinaFace / Tensorflow</div>
 				<div><strong style="font-family: 'Archivo Narrow'">Languages & Frameworks: </strong>Javascript / Python / Node.js / C# / .NET / Bash / Powershell / HTML / CSS / Svelte / React</div>
-				<div><strong style="font-family: 'Archivo Narrow'">Platforms: </strong>Firebase / Heroku / Next.js / Observablehq.com / Google Data Studio</div>
-				<div><strong style="font-family: 'Archivo Narrow'">SDKs: </strong>Trello plugin development, custom Slack bot development</div>
+				<div><strong style="font-family: 'Archivo Narrow'">SDKs: </strong>JIRA API / Trello SDK / Slack SDK / OpenAI Realtime API</div>
 			</div>
 		</div>
 		<div class="my-8">
@@ -209,6 +209,46 @@
 			<div class="pt-2">
 				<!-- <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> -->
 					<div class="jobs">
+						<div class="job">
+							<h2 class="text-2xl">Product Engineer - Computer Vision</h2>
+							<h3 class="text-xl" style="font-family: 'Archivo Narrow'">UK Gov - HMPPS Prison Rollcall System</h3>
+							<h4 class="text-l rounded-sm text-blue-900 py-1">■  &nbsp; 2025 - 2026 [Cognizant Consultant]</h4>
+							<p>Building a cloud-agnostic prison rollcall application using facial recognition technology. The system uses DeepFace with ArcFace and RetinaFace models for accurate prisoner identification during roll calls, designed to run on CUDA-enabled infrastructure.
+							</p>
+							<p class="italic">Technologies: Python, DeepFace, ArcFace, RetinaFace, CUDA.</p>
+						</div>
+						<div class="job">
+							<h2 class="text-2xl">GenAI / IDP Engineer</h2>
+							<h3 class="text-xl" style="font-family: 'Archivo Narrow'">Legal & General - Docusort IDP Platform</h3>
+							<h4 class="text-l rounded-sm text-blue-900 py-1">■  &nbsp; 2025 [Cognizant Consultant]</h4>
+							<p>Working on Docusort, an Intelligent Document Processing system for ingesting emails and attachments, using Claude to classify and route queries to the correct teams. Responsibilities included developing LangGraph agent components, email ingestion pipelines, attachment decryption (using Claude to identify password usage patterns and suggest decryption passwords), and building the IDP test harness.
+							</p>
+							<p class="italic">Technologies: Python, Claude/Anthropic, LangGraph, AWS (Lambda, S3, SES, SQS, DynamoDB), Docker, LibreOffice.</p>
+						</div>
+						<div class="job">
+							<h2 class="text-2xl">Product Engineer - Data Migration</h2>
+							<h3 class="text-xl" style="font-family: 'Archivo Narrow'">Aviva - Oracle to Snowflake Migration</h3>
+							<h4 class="text-l rounded-sm text-blue-900 py-1">■  &nbsp; 2025 [Cognizant Consultant]</h4>
+							<p>Building tooling to support the migration of data workloads from Oracle to Snowflake, enabling Aviva's transition to a modern cloud data warehouse platform.
+							</p>
+							<p class="italic">Technologies: Oracle, Snowflake, SQL, JavaScript, dbt.</p>
+						</div>
+						<div class="job">
+							<h2 class="text-2xl">Product Engineer - AI/ML</h2>
+							<h3 class="text-xl" style="font-family: 'Archivo Narrow'">Cognizant - Virtual Scrum Master (Pre-sales)</h3>
+							<h4 class="text-l rounded-sm text-blue-900 py-1">■  &nbsp; 2025 [Cognizant]</h4>
+							<p>Built a pre-sales demonstration application for a virtual scrum master that can dial into calls using OpenAI's Realtime API, run scrum ceremonies, update JIRA tickets, and maintain context about previous meeting topics using vector storage for long-term memory.
+							</p>
+							<p class="italic">Technologies: Node.js, Python, OpenAI Realtime API, JIRA API, FAISS.</p>
+						</div>
+						<div class="job">
+							<h2 class="text-2xl">Product Engineer - AI/ML</h2>
+							<h3 class="text-xl" style="font-family: 'Archivo Narrow'">Cognizant - Consultant Matching RAG System</h3>
+							<h4 class="text-l rounded-sm text-blue-900 py-1">■  &nbsp; 2024 - 2025 [Cognizant]</h4>
+							<p>Built a vector database RAG system for intelligently matching consultants to job roles based on skills, experience and availability. The system uses semantic search to find the best consultant matches for incoming project requirements.
+							</p>
+							<p class="italic">Technologies: Python, FAISS, LangGraph.</p>
+						</div>
 						<div class="job">
 							<h2 class="text-2xl">Technical Delivery Lead</h2>
 							<h3 class="text-xl" style="font-family: 'Archivo Narrow'">UK Ministry of Defence - Defence Digital</h3>
