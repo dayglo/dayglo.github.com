@@ -11,7 +11,7 @@
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;400;500;600&family=Archivo+Narrow:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;400;500;600&family=Archivo+Narrow:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=Tomorrow:wght@600;700&display=swap" rel="stylesheet">
 
 	<style>
 		:root {
@@ -107,6 +107,7 @@
 		/* Index of links */
 		nav { border-top: 1px solid var(--rule); }
 		.row {
+			--accent: var(--mark);
 			display: grid;
 			grid-template-columns: 3.2rem 1fr auto;
 			align-items: baseline;
@@ -117,6 +118,8 @@
 			color: inherit;
 			transition: padding-left .4s cubic-bezier(.2,.7,.2,1);
 		}
+		.r-nc { --accent: #46d6c8; }   /* Nice Changes cyan */
+		.r-kg { --accent: #ff6b35; }   /* Killogram orange  */
 		.row:hover, .row:focus-visible { padding-left: .5rem; outline: none; }
 		.num {
 			font-family: 'Archivo Narrow', sans-serif;
@@ -128,19 +131,28 @@
 		.row:hover .num, .row:focus-visible .num { color: var(--ink); }
 
 		.body { min-width: 0; }
+		.brand { display: flex; align-items: center; gap: .7rem; }
+		.mark { flex: none; color: var(--accent); line-height: 0; }
+		.mark svg { display: block; width: clamp(24px, 6.5vw, 32px); height: auto; }
 		.name {
-			display: inline-block;
+			display: inline;
 			font-family: 'Archivo', sans-serif;
 			font-weight: 500;
-			font-size: clamp(1.8rem, 6.5vw, 2.9rem);
+			font-size: clamp(1.7rem, 6.2vw, 2.8rem);
 			line-height: 1.05;
 			letter-spacing: -.015em;
-			background-image: linear-gradient(var(--mark), var(--mark));
+			background-image: linear-gradient(var(--accent), var(--accent));
 			background-repeat: no-repeat;
 			background-position: 0 86%;
 			background-size: 0% 34%;
 			transition: background-size .4s cubic-bezier(.2,.7,.2,1);
 		}
+		.name.f-mono {
+			font-family: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+			font-weight: 600; text-transform: uppercase; letter-spacing: -.02em;
+			font-size: clamp(1.5rem, 5.4vw, 2.4rem);
+		}
+		.name.f-tomorrow { font-family: 'Tomorrow', sans-serif; font-weight: 700; letter-spacing: -.01em; }
 		.row:hover .name, .row:focus-visible .name { background-size: 100% 34%; }
 		.desc {
 			display: block;
@@ -170,7 +182,7 @@
 			transition: transform .4s cubic-bezier(.2,.7,.2,1), color .3s;
 			padding-top: .35rem;
 		}
-		.row:hover .arrow, .row:focus-visible .arrow { color: var(--ink); transform: translate(4px, -4px); }
+		.row:hover .arrow, .row:focus-visible .arrow { color: var(--accent); transform: translate(4px, -4px); }
 
 		footer {
 			margin-top: auto;
@@ -208,7 +220,7 @@
 
 		<div class="topline reveal d1">
 			<span class="dot">George Cairns</span>
-			<span>Est. Norwich, UK</span>
+			<span>Based in Brighouse, UK</span>
 		</div>
 
 		<header>
@@ -218,30 +230,65 @@
 		</header>
 
 		<nav>
-			<a class="row reveal d4" href="resume.html">
+			<a class="row r-nc reveal d4" href="https://nicechanges.com" target="_blank" rel="noopener">
 				<span class="num">01</span>
 				<span class="body">
-					<span class="name">Curriculum Vitae</span>
-					<span class="desc">Two decades across cloud automation, application development, data engineering and delivery.</span>
-					<a class="sub" href="George Cairns CV.pdf">↓ Download PDF</a>
+					<span class="brand">
+						<span class="mark" aria-hidden="true">
+							<svg viewBox="0 0 34 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round">
+								<path d="M17 3 L4 27 L30 27 Z"/>
+								<path d="M10.5 15 L23.5 15 L17 27 Z" fill="currentColor" stroke="none"/>
+								<circle cx="17" cy="3" r="2.2" fill="currentColor" stroke="none"/>
+								<circle cx="4" cy="27" r="2.2" fill="currentColor" stroke="none"/>
+								<circle cx="30" cy="27" r="2.2" fill="currentColor" stroke="none"/>
+							</svg>
+						</span>
+						<span class="name f-mono">Nice Changes</span>
+					</span>
+					<span class="desc">Sketch chord progressions on a Tonnetz, hear them instantly, and learn why they work — break out of the four-chord rut.</span>
 				</span>
 				<span class="arrow" aria-hidden="true">↗</span>
 			</a>
 
-			<a class="row reveal d5" href="https://killogram.netlify.app" target="_blank" rel="noopener">
+			<a class="row r-kg reveal d5" href="https://killogram.netlify.app" target="_blank" rel="noopener">
 				<span class="num">02</span>
 				<span class="body">
-					<span class="name">Killogram</span>
+					<span class="brand">
+						<span class="mark" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none">
+								<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+								<circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.5"/>
+								<circle cx="12" cy="12" r="2" fill="currentColor"/>
+								<line x1="2" y1="12" x2="6" y2="12" stroke="currentColor" stroke-width="2"/>
+								<line x1="18" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/>
+								<line x1="12" y1="2" x2="12" y2="6" stroke="currentColor" stroke-width="2"/>
+								<line x1="12" y1="18" x2="12" y2="22" stroke="currentColor" stroke-width="2"/>
+								<g transform="translate(4,4) scale(0.3)"><rect x="0" y="6" width="4" height="12" rx="2" fill="currentColor"/><rect x="20" y="6" width="4" height="12" rx="2" fill="currentColor"/><rect x="4" y="10" width="16" height="4" rx="1" fill="currentColor"/></g>
+								<g transform="translate(16,4) scale(0.3)"><rect x="0" y="6" width="4" height="12" rx="2" fill="currentColor"/><rect x="20" y="6" width="4" height="12" rx="2" fill="currentColor"/><rect x="4" y="10" width="16" height="4" rx="1" fill="currentColor"/></g>
+							</svg>
+						</span>
+						<span class="name f-tomorrow">Killogram</span>
+					</span>
 					<span class="desc">Turn Counter-Strike deaths into fitness gains — every in-game death fires a workout to your phone.</span>
 				</span>
 				<span class="arrow" aria-hidden="true">↗</span>
 			</a>
 
-			<a class="row reveal d6" href="https://nicechanges.com" target="_blank" rel="noopener">
+			<a class="row r-cv reveal d6" href="resume.html">
 				<span class="num">03</span>
 				<span class="body">
-					<span class="name">Nice Changes</span>
-					<span class="desc">Sketch chord progressions on a Tonnetz, hear them instantly, and learn why they work — break out of the four-chord rut.</span>
+					<span class="brand">
+						<span class="mark" aria-hidden="true">
+							<svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+								<line x1="7" y1="9" x2="25" y2="9"/>
+								<line x1="7" y1="16" x2="25" y2="16"/>
+								<line x1="7" y1="23" x2="18" y2="23"/>
+							</svg>
+						</span>
+						<span class="name">Curriculum Vitae</span>
+					</span>
+					<span class="desc">Two decades across cloud automation, application development, data engineering and delivery.</span>
+					<a class="sub" href="George Cairns CV.pdf">↓ Download PDF</a>
 				</span>
 				<span class="arrow" aria-hidden="true">↗</span>
 			</a>
