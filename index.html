@@ -1,5 +1,257 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>George Cairns</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="George Cairns — Senior Consulting Engineer. CV, Killogram and Nicechanges.">
+	<meta name="theme-color" content="#f6f4ee" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#141310" media="(prefers-color-scheme: dark)">
+	<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d8f400'/%3E%3Ctext x='50' y='74' font-size='68' text-anchor='middle' font-family='Georgia,serif' fill='%23141310'%3EG%3C/text%3E%3C/svg%3E">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@200;400;500;600&family=Archivo+Narrow:wght@600;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+
+	<style>
+		:root {
+			--paper: #f6f4ee;
+			--ink:   #17140f;
+			--muted: #8a8375;
+			--rule:  #ded9cd;
+			--mark:  #d8f400;   /* dayglo wink */
+			--panel: #efece3;
+		}
+		@media (prefers-color-scheme: dark) {
+			:root {
+				--paper: #141310;
+				--ink:   #efece3;
+				--muted: #857e6f;
+				--rule:  #2b2822;
+				--mark:  #c6e400;
+				--panel: #1c1a15;
+			}
+		}
+
+		* { box-sizing: border-box; }
+		html { -webkit-text-size-adjust: 100%; }
+		body {
+			margin: 0;
+			background: var(--paper);
+			color: var(--ink);
+			font-family: 'IBM Plex Sans', system-ui, sans-serif;
+			line-height: 1.5;
+			-webkit-font-smoothing: antialiased;
+			text-rendering: optimizeLegibility;
+		}
+
+		.wrap {
+			max-width: 760px;
+			margin: 0 auto;
+			padding: clamp(2rem, 6vw, 5.5rem) clamp(1.4rem, 6vw, 2.5rem) 3rem;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.topline {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-family: 'Archivo Narrow', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: .28em;
+			font-size: .72rem;
+			color: var(--muted);
+			padding-bottom: 1.2rem;
+			border-bottom: 1px solid var(--rule);
+		}
+		.topline .dot { color: var(--ink); }
+		.topline .dot::before {
+			content: "";
+			display: inline-block;
+			width: .5em; height: .5em;
+			margin-right: .55em;
+			border-radius: 50%;
+			background: var(--mark);
+			vertical-align: baseline;
+		}
+
+		/* Masthead */
+		header { padding: clamp(2.4rem, 9vw, 4.6rem) 0 clamp(2.2rem, 7vw, 3.4rem); }
+		h1 {
+			font-family: 'Archivo', sans-serif;
+			font-weight: 600;
+			font-size: clamp(3rem, 13vw, 6.4rem);
+			line-height: .92;
+			letter-spacing: -.03em;
+			margin: 0;
+		}
+		.tagline {
+			margin: 1.5rem 0 0;
+			max-width: 34ch;
+			font-size: clamp(1.05rem, 3.4vw, 1.3rem);
+			font-weight: 400;
+			color: var(--ink);
+		}
+		.role {
+			display: inline-block;
+			margin-top: 1.6rem;
+			font-family: 'Archivo Narrow', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: .22em;
+			font-size: .8rem;
+			color: var(--muted);
+		}
+
+		/* Index of links */
+		nav { border-top: 1px solid var(--rule); }
+		.row {
+			display: grid;
+			grid-template-columns: 3.2rem 1fr auto;
+			align-items: baseline;
+			gap: 0 1.1rem;
+			padding: clamp(1.4rem, 4vw, 2rem) 0;
+			border-bottom: 1px solid var(--rule);
+			text-decoration: none;
+			color: inherit;
+			transition: padding-left .4s cubic-bezier(.2,.7,.2,1);
+		}
+		.row:hover, .row:focus-visible { padding-left: .5rem; outline: none; }
+		.num {
+			font-family: 'Archivo Narrow', sans-serif;
+			font-size: .82rem;
+			letter-spacing: .1em;
+			color: var(--muted);
+			padding-top: .5rem;
+		}
+		.row:hover .num, .row:focus-visible .num { color: var(--ink); }
+
+		.body { min-width: 0; }
+		.name {
+			display: inline-block;
+			font-family: 'Archivo', sans-serif;
+			font-weight: 500;
+			font-size: clamp(1.8rem, 6.5vw, 2.9rem);
+			line-height: 1.05;
+			letter-spacing: -.015em;
+			background-image: linear-gradient(var(--mark), var(--mark));
+			background-repeat: no-repeat;
+			background-position: 0 86%;
+			background-size: 0% 34%;
+			transition: background-size .4s cubic-bezier(.2,.7,.2,1);
+		}
+		.row:hover .name, .row:focus-visible .name { background-size: 100% 34%; }
+		.desc {
+			display: block;
+			margin: .5rem 0 0;
+			color: var(--muted);
+			font-size: .98rem;
+			max-width: 42ch;
+		}
+		.sub {
+			display: inline-block;
+			margin-top: .7rem;
+			font-family: 'Archivo Narrow', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: .16em;
+			font-size: .72rem;
+			color: var(--muted);
+			text-decoration: none;
+			border-bottom: 1px solid var(--rule);
+			padding-bottom: 1px;
+		}
+		.sub:hover { color: var(--ink); border-color: var(--ink); }
+
+		.arrow {
+			font-family: 'Archivo', sans-serif;
+			font-size: 1.4rem;
+			color: var(--muted);
+			transition: transform .4s cubic-bezier(.2,.7,.2,1), color .3s;
+			padding-top: .35rem;
+		}
+		.row:hover .arrow, .row:focus-visible .arrow { color: var(--ink); transform: translate(4px, -4px); }
+
+		footer {
+			margin-top: auto;
+			padding-top: 2.6rem;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: .6rem 1rem;
+			font-family: 'Archivo Narrow', sans-serif;
+			text-transform: uppercase;
+			letter-spacing: .18em;
+			font-size: .72rem;
+			color: var(--muted);
+		}
+		footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; }
+		footer a:hover { color: var(--ink); border-color: var(--ink); }
+
+		/* entrance */
+		@media (prefers-reduced-motion: no-preference) {
+			.reveal { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+			.d1 { animation-delay: .05s; } .d2 { animation-delay: .13s; }
+			.d3 { animation-delay: .21s; } .d4 { animation-delay: .29s; }
+			.d5 { animation-delay: .37s; } .d6 { animation-delay: .45s; }
+			@keyframes rise { to { opacity: 1; transform: none; } }
+		}
+
+		@media (max-width: 480px) {
+			.row { grid-template-columns: 2.2rem 1fr; }
+			.arrow { display: none; }
+		}
+	</style>
+</head>
 <body>
-<a href='resume.html'>My resume</a>
-<body>
+	<div class="wrap">
+
+		<div class="topline reveal d1">
+			<span class="dot">George Cairns</span>
+			<span>Est. Norwich, UK</span>
+		</div>
+
+		<header>
+			<h1 class="reveal d2">George<br>Cairns</h1>
+			<p class="tagline reveal d3">Delivering robust automation, applications, platforms and tooling — with empathy and perspective.</p>
+			<span class="role reveal d3">Senior Consulting Engineer</span>
+		</header>
+
+		<nav>
+			<a class="row reveal d4" href="resume.html">
+				<span class="num">01</span>
+				<span class="body">
+					<span class="name">Curriculum Vitae</span>
+					<span class="desc">Two decades across cloud automation, application development, data engineering and delivery.</span>
+					<a class="sub" href="George Cairns CV.pdf">↓ Download PDF</a>
+				</span>
+				<span class="arrow" aria-hidden="true">↗</span>
+			</a>
+
+			<a class="row reveal d5" href="https://killogram.netlify.app" target="_blank" rel="noopener">
+				<span class="num">02</span>
+				<span class="body">
+					<span class="name">Killogram</span>
+					<span class="desc">Turn Counter-Strike deaths into fitness gains — every in-game death fires a workout to your phone.</span>
+				</span>
+				<span class="arrow" aria-hidden="true">↗</span>
+			</a>
+
+			<a class="row reveal d6" href="https://nicechanges.com" target="_blank" rel="noopener">
+				<span class="num">03</span>
+				<span class="body">
+					<span class="name">Nice Changes</span>
+					<span class="desc">Sketch chord progressions on a Tonnetz, hear them instantly, and learn why they work — break out of the four-chord rut.</span>
+				</span>
+				<span class="arrow" aria-hidden="true">↗</span>
+			</a>
+		</nav>
+
+		<footer class="reveal d6">
+			<span>© 2026 George Cairns</span>
+			<span><a href="https://github.com/dayglo" target="_blank" rel="noopener">github.com/dayglo</a></span>
+		</footer>
+
+	</div>
+</body>
 </html>
