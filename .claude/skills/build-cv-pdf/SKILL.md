@@ -71,3 +71,19 @@ Toolchain pinned versions:
   everything in `.pdfbuild/` is regenerated, never committed.
 - If a render fails with a missing-module / missing-chrome error, the fix is
   almost always "re-run `setup.sh`", not editing `render.js`.
+
+## George's CV (resume.html → "George Cairns CV.pdf")
+
+`george-render.js` (same toolchain) renders **George's** CV. It reproduces the
+original print-driver export: US Letter, no background graphics (grey name on
+white), desktop-width layout (~1100px so the jobs grid is 3 columns) scaled
+0.742× onto the page via pdf-lib, Noto Color Emoji for the 🏠/🔒 markers, and
+cards allowed to split at page breaks (as the original did). Needs
+`npm i pdf-to-png-converter pdf-lib` in `.pdfbuild/` (setup.sh's npm install
+only covers puppeteer-core). Expect **4 pages**:
+
+```bash
+cd .pdfbuild && node george-render.js && node pdf2png.js "George Cairns CV.pdf" new
+# inspect pngs/new-p*.png, then:
+cp "George Cairns CV.pdf" "../George Cairns CV.pdf"
+```

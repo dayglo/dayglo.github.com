@@ -16,7 +16,7 @@ PB="$REPO/.pdfbuild"
 mkdir -p "$PB"
 
 # 1. Render + screenshot scripts (committed source of truth lives in the skill dir)
-cp "$SKILL_DIR/render.js" "$SKILL_DIR/shot.js" "$PB/"
+cp "$SKILL_DIR/render.js" "$SKILL_DIR/shot.js" "$SKILL_DIR/george-render.js" "$SKILL_DIR/pdf2png.js" "$PB/"
 
 # 2. puppeteer-core (drives headless Chrome)
 if [ ! -d "$PB/node_modules/puppeteer-core" ]; then
